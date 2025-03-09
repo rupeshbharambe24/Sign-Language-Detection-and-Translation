@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Sign Language Translator</h1>
+            <div class="language-container">
+                <label for="language-selector">Language:</label>
+                <select id="language-selector" class="language-selector">
+                    <option value="en">English</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                </select>
+            </div>
+        </header>
+
+        <main class="app-content">
+            <div class="control-panel">
+                <div class="mode-selection">
+                    <h3>Translation Mode</h3>
+                    <div class="mode-buttons">
+                        <button class="mode-btn active" data-mode="letter">Letter</button>
+                        <button class="mode-btn" data-mode="number">Number</button>
+                        <button class="mode-btn" data-mode="word">Word</button>
+                        <button class="mode-btn" data-mode="sentence">Sentence</button>
+                    </div>
+                </div>
+
+                <div class="translation-controls">
+                    <button id="start-translate" class="primary-btn">Start Translation</button>
+                    <button id="stop-translate" class="primary-btn hidden">Stop Translation</button>
+                </div>
+
+                <div id="sentence-controls" class="sentence-controls hidden">
+                    <button id="add-space" class="secondary-btn">Space</button>
+                    <button id="add-fullstop" class="secondary-btn">Full Stop</button>
+                    <button id="ok-button" class="primary-btn">OK</button>
+                </div>
+            </div>
+
+            <div class="webcam-container">
+                <video id="video" autoplay></video>
+                <button id="mesh-toggle" class="toggle-btn">Hide Mesh</button>
+            </div>
+
+            <div class="results-panel">
+                <div class="result-card">
+                    <h3>Captured Letters</h3>
+                    <div id="captured-letters" class="result-display">
+                        <p id="captured-letters-text"></p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Current Translation</h3>
+                    <div class="result-display">
+                        <p id="current-translation"></p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Prediction</h3>
+                    <div class="result-display">
+                        <p id="prediction-text">No prediction yet</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Sign Language Translator &copy; 2025</p>
+        </footer>
+    </div>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>
+
